@@ -3,6 +3,7 @@
     package="com.example.koishi.finalproject">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -30,12 +31,13 @@
             <intent-filter>
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.example.koishi.finalproject.FIREUP" />
             </intent-filter>
 
         </receiver>
 
         <service android:name=".MonitorService" />
-        
+
     </application>
 
 </manifest>

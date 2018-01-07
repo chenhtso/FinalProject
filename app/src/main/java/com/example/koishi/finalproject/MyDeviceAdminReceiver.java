@@ -15,9 +15,10 @@ import java.util.Calendar;
 public class MyDeviceAdminReceiver extends DeviceAdminReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
+        if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)
+                || intent.getAction().equals("com.example.koishi.finalproject.FIREUP")) {
             Intent monitor = new Intent(context, MonitorService.class);
-            PendingIntent pendingIntent = PendingIntent.getService(context, 0, intent, 0);
+            PendingIntent pendingIntent = PendingIntent.getService(context, 0, monitor, 0);
             AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, Calendar.getInstance().getTimeInMillis(), 1000 * 60, pendingIntent);
         }
