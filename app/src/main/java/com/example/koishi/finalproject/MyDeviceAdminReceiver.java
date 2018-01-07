@@ -19,7 +19,7 @@ public class MyDeviceAdminReceiver extends DeviceAdminReceiver {
             Intent monitor = new Intent(context, MonitorService.class);
             PendingIntent pendingIntent = PendingIntent.getService(context, 0, intent, 0);
             AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, Calendar.getInstance().getTimeInMillis(), 1000 * 60 * 3, pendingIntent);
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, Calendar.getInstance().getTimeInMillis(), 1000 * 60, pendingIntent);
         }
         super.onReceive(context, intent);
     }

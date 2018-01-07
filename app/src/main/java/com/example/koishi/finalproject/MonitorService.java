@@ -1,6 +1,5 @@
 package com.example.koishi.finalproject;
 
-import android.accessibilityservice.AccessibilityService;
 import android.app.Service;
 import android.app.admin.DevicePolicyManager;
 import android.content.Context;
