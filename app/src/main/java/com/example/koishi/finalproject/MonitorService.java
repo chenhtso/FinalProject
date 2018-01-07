@@ -28,7 +28,7 @@ public class MonitorService extends Service {
         super.onCreate();
     }
 
-    private void readSetting() {
+    private void readSettingAndSet() {
         limitedHour = 18;
     }
 
@@ -44,7 +44,7 @@ public class MonitorService extends Service {
     private class MyThread extends Thread {
         @Override
         public void run() {
-            readSetting();
+            readSettingAndSet();
             int currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 
             if (currentHour >= limitedHour) {

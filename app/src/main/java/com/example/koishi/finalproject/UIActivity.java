@@ -6,7 +6,7 @@ import android.widget.TabHost;
 
 public class UIActivity extends AppCompatActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ui);
 
@@ -18,6 +18,10 @@ public class UIActivity extends AppCompatActivity {
 
         tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("第二个标签")
                 .setContent(R.id.isanimal));
+    }
+
+    private void setTimeAndPassword() {
+
     }
 
 }
